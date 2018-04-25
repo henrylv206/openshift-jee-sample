@@ -17,5 +17,17 @@ echo test'''
         openshiftVerifyService(svcName: 'jenkins', namespace: 'test')
       }
     }
+    stage('AAA') {
+      steps {
+        sh 'echo AAA'
+        echo 'BBB'
+        sleep 30
+      }
+    }
+    stage('BBB') {
+      steps {
+        waitUntil()
+      }
+    }
   }
 }
